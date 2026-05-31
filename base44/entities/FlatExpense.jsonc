@@ -1,0 +1,59 @@
+{
+  "name": "FlatExpense",
+  "type": "object",
+  "properties": {
+    "flat_code": {
+      "type": "string",
+      "description": "Shared flat group code"
+    },
+    "title": {
+      "type": "string",
+      "description": "What the expense is for"
+    },
+    "amount": {
+      "type": "number",
+      "description": "Total amount in dollars"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "rent",
+        "utilities",
+        "groceries",
+        "internet",
+        "household",
+        "entertainment",
+        "other"
+      ],
+      "description": "Expense category"
+    },
+    "paid_by": {
+      "type": "string",
+      "description": "Email of who paid"
+    },
+    "split_between": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Emails of people splitting the cost"
+    },
+    "date": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of expense"
+    },
+    "is_recurring": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether this is a recurring expense"
+    }
+  },
+  "required": [
+    "flat_code",
+    "title",
+    "amount",
+    "category",
+    "paid_by"
+  ]
+}

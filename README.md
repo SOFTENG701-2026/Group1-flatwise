@@ -1,45 +1,39 @@
-# FlatWise — Personal Finance Learning Tool
+**Welcome to your Base44 project** 
 
-An educational web app teaching university students personal finance skills through interactive modules.
+**About**
 
-## Educational Theories Applied
-- **Situated Learning** — Real-world NZ flat scenarios
-- **Scaffolded Learning (Vygotsky's ZPD)** — Progressive difficulty across 5 modules
-- **Kolb's Learning Cycle** — Predict → Observe → Reflect → Apply
-- **Bloom's Taxonomy** — Modules climb from Remember to Create
-- **Active Learning** — Interactive categorisation, sliders, quizzes
+View and Edit  your app on [Base44.com](http://Base44.com) 
 
-## Modules
-| Module | Topic | Bloom Level | XP |
-|--------|-------|-------------|-----|
-| 1 | Understanding flat costs | Remember → Understand | 40 |
-| 2 | Splitting costs fairly | Apply | 60 |
-| 3 | Variable bills season | Analyse | 60 |
-| 4 | Surprise situations | Evaluate | 60 |
-| 5 | Planning ahead | Create | 80 |
+This project contains everything you need to run your app locally.
 
-## Running the app
+**Edit the code in your local development environment**
 
-### Prerequisites
-- Node.js 18+ ([download here](https://nodejs.org))
+Any change pushed to the repo will also be reflected in the Base44 Builder.
 
-### Steps
-```bash
-# 1. Clone the repo
-git clone https://github.com/SOFTENG701-2026/group1-flatwise.git
-cd group1-flatwise
+**Prerequisites:** 
 
-# 2. Install dependencies
-npm install
+1. Clone the repository using the project's Git URL 
+2. Navigate to the project directory
+3. Install dependencies: `npm install`
+4. Create an `.env.local` file and set the right environment variables
 
-# 3. Start the app
-npm start
+```
+VITE_BASE44_APP_ID=your_app_id
+VITE_BASE44_APP_BASE_URL=your_backend_url
+
+e.g.
+VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
+VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
 ```
 
-The app will open at http://localhost:3000
+Run the app: `npm run dev`
 
-## Tech Stack
-- React (Create React App)
-- React Router DOM
-- localStorage for progress tracking
-- No external backend required
+**Publish your changes**
+
+Open [Base44.com](http://Base44.com) and click on Publish.
+
+**Docs & Support**
+
+Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
+
+Support: [https://app.base44.com/support](https://app.base44.com/support)

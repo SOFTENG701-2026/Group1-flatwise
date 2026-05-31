@@ -1,0 +1,71 @@
+{
+  "name": "UserProgress",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string"
+    },
+    "xp": {
+      "type": "number",
+      "default": 0
+    },
+    "level": {
+      "type": "number",
+      "default": 1
+    },
+    "streak_days": {
+      "type": "number",
+      "default": 0
+    },
+    "session_streak": {
+      "type": "number",
+      "default": 0,
+      "description": "Modules completed this session"
+    },
+    "last_activity_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "completed_modules": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "completed_challenges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "completed_quizzes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "watched_biases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of cognitive biases the user has flagged to watch"
+    },
+    "simulator_high_score": {
+      "type": "number",
+      "default": 0
+    },
+    "flat_code": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "user_email"
+  ]
+}
