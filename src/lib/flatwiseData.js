@@ -55,6 +55,13 @@ export const MODULES = [
     iconBg: "#D1FAE5",
     xpReward: 100,
     scaffolding: "full",        // hints on by default
+    badge: {
+      name: "Budget Planner",
+      description: "Mapped income and fixed costs before spending a cent on anything else.",
+      emoji: "📋",
+      color: "#D1FAE5",
+      textColor: "#1B4332",
+    },
     theories: [
       { label: "Bloom: Identify", color: "#D1FAE5", text: "#1B4332" },
       { label: "Constructivist scaffolding", color: "#FCE7F3", text: "#9D174D" },
@@ -137,6 +144,13 @@ export const MODULES = [
     iconBg: "#D1FAE5",
     xpReward: 100,
     scaffolding: "full",
+    badge: {
+      name: "Reflective Learner",
+      description: "Distinguished needs from wants and made informed trade-offs under pressure.",
+      emoji: "🪞",
+      color: "#FCE7F3",
+      textColor: "#9D174D",
+    },
     theories: [
       { label: "Bloom: Identify", color: "#D1FAE5", text: "#1B4332" },
       { label: "Kolb: predict → reflect", color: "#FEF9C3", text: "#92400E" },
@@ -223,6 +237,13 @@ export const MODULES = [
     iconBg: "#FEF9C3",
     xpReward: 150,
     scaffolding: "request",  // hints only on request
+    badge: {
+      name: "Bill Splitter",
+      description: "Calculated fair bill shares and resolved a usage dispute between flatmates.",
+      emoji: "🤝",
+      color: "#FEF9C3",
+      textColor: "#92400E",
+    },
     theories: [
       { label: "Bloom: Calculate", color: "#FEF9C3", text: "#92400E" },
       { label: "Social constructivism", color: "#E0E7FF", text: "#3730A3" },
@@ -314,6 +335,13 @@ export const MODULES = [
     iconBg: "#FEF9C3",
     xpReward: 150,
     scaffolding: "request",
+    badge: {
+      name: "Payment Planner",
+      description: "Forecast variable costs and built a buffer for unexpected expenses.",
+      emoji: "💡",
+      color: "#E0E7FF",
+      textColor: "#3730A3",
+    },
     theories: [
       { label: "Bloom: Predict", color: "#FEF9C3", text: "#92400E" },
       { label: "Cognitivism: bias surfacing", color: "#FCE7F3", text: "#9D174D" },
@@ -405,6 +433,13 @@ export const MODULES = [
     iconBg: "#FEE2E2",
     xpReward: 200,
     scaffolding: "none",    // no hints at all
+    badge: {
+      name: "Payment Planner",
+      description: "Managed an irregular income and built a cash-flow buffer for a StudyLink delay.",
+      emoji: "📅",
+      color: "#FEE2E2",
+      textColor: "#991B1B",
+    },
     theories: [
       { label: "Bloom: Predict", color: "#FEF9C3", text: "#92400E" },
       { label: "Kolb: full cycle", color: "#D1FAE5", text: "#1B4332" },
@@ -495,6 +530,13 @@ export const MODULES = [
     iconBg: "#FEE2E2",
     xpReward: 200,
     scaffolding: "none",
+    badge: {
+      name: "Negotiator",
+      description: "Navigated a flatmate bond dispute and applied fair financial conflict resolution.",
+      emoji: "🗣️",
+      color: "#FEE2E2",
+      textColor: "#991B1B",
+    },
     theories: [
       { label: "Bloom: Reflect", color: "#FCE7F3", text: "#9D174D" },
       { label: "Social constructivism", color: "#E0E7FF", text: "#3730A3" },

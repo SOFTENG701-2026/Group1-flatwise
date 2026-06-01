@@ -1,6 +1,4 @@
-import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster"
-import { base44 } from "@/api/base44Client";
 import { QueryClientProvider } from '@tanstack/react-query'
 import { queryClientInstance } from '@/lib/query-client'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
@@ -20,39 +18,7 @@ import ProgressPage from './pages/ProgressPage';
 import NegotiationScenario from './pages/NegotiationScenario';
 import SpotMistake from './pages/SpotMistake';
 import MyFlat from './pages/MyFlat';
-
-const DEV_LOGIN_EMAIL = "rsta265@aucklanduni.ac.nz";
-
-const DevAutoLogin = () => {
-  useEffect(() => {
-    const runDevLogin = async () => {
-      const isLocal =
-        window.location.hostname === "localhost" ||
-        window.location.hostname === "127.0.0.1";
-
-      if (!import.meta.env.DEV || !isLocal) return;
-
-      try {
-        const alreadyAuthenticated = await base44.auth.isAuthenticated();
-
-        if (!alreadyAuthenticated) {
-          await base44.auth.loginViaEmailPassword(
-            DEV_LOGIN_EMAIL,
-            "anything"
-          );
-
-          window.location.reload();
-        }
-      } catch (error) {
-        console.error("Base44 local dev login failed:", error);
-      }
-    };
-
-    runDevLogin();
-  }, []);
-
-  return null;
-};
+import BillSplit from './pages/BillSplit';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -84,6 +50,7 @@ const AuthenticatedApp = () => {
         <Route path="/negotiation/:scenarioId" element={<NegotiationScenario />} />
         <Route path="/spot-mistake/:budgetId" element={<SpotMistake />} />
         <Route path="/my-flat" element={<MyFlat />} />
+        <Route path="/bill-split" element={<BillSplit />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
@@ -95,7 +62,6 @@ function App() {
     <AuthProvider>
       <QueryClientProvider client={queryClientInstance}>
         <Router>
-          <DevAutoLogin />
           <AuthenticatedApp />
         </Router>
         <Toaster />

@@ -201,19 +201,24 @@ export default function Dashboard() {
       {completed.length > 0 &&
       <div>
           <h2 className="text-base font-bold text-[#1A1A1A] mb-3">Earned Badges</h2>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-col gap-2">
             {completed.map((id) => {
             const mod = MODULES.find((m) => m.id === id);
             if (!mod) return null;
+            const badge = mod.badge;
+            if (!badge) return null;
             return (
-              <div key={id} className="flex items-center gap-2 bg-white rounded-2xl px-3 py-2 shadow-sm">
-                  <span className="text-lg">{mod.icon}</span>
-                  <div>
-                    <p className="text-xs font-semibold text-[#1B4332]">{mod.title}</p>
-                    <p className="text-xs text-gray-400">+{mod.xpReward} XP</p>
+              <div key={id} className="flex items-center gap-3 bg-white rounded-2xl px-4 py-3 shadow-sm border border-gray-50">
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center text-xl shrink-0"
+                    style={{ backgroundColor: badge.color }}>
+                    {badge.emoji}
                   </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-bold" style={{ color: badge.textColor }}>{badge.name}</p>
+                    <p className="text-xs text-gray-500 leading-snug mt-0.5">{badge.description}</p>
+                  </div>
+                  <span className="text-xs font-medium text-gray-400 shrink-0">+{mod.xpReward} XP</span>
                 </div>);
-
           })}
           </div>
         </div>

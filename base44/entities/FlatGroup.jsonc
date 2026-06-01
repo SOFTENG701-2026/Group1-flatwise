@@ -1,0 +1,89 @@
+{
+  "name": "FlatGroup",
+  "type": "object",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "6-char flat code e.g. FLAT-4K2X"
+    },
+    "name": {
+      "type": "string",
+      "description": "Flat display name"
+    },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Array of member emails"
+    },
+    "completed_challenges": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs of completed challenges"
+    },
+    "unlocked_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Flat visualisation items unlocked via challenges"
+    },
+    "challenge_data": {
+      "type": "object",
+      "description": "Per-challenge state: opt-ins, predictions, etc."
+    }
+  },
+  "required": [
+    "code"
+  ],
+  "rls": {
+    "create": {},
+    "read": {
+      "$or": [
+        {
+          "data.members": {
+            "$in": [
+              "{{user.email}}"
+            ]
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "update": {
+      "$or": [
+        {
+          "data.members": {
+            "$in": [
+              "{{user.email}}"
+            ]
+          }
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    },
+    "delete": {
+      "$or": [
+        {
+          "created_by_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}
