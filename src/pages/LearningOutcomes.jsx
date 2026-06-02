@@ -23,7 +23,7 @@ export default function LearningOutcomes() {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <p className="text-xs text-gray-500 mt-1 cursor-help underline decoration-dotted">
+              <p className="text-xs text-gray-600 mt-1 cursor-help underline decoration-dotted">
                 Aligned to Bloom's Revised Taxonomy (Anderson & Krathwohl, 2001)
               </p>
             </TooltipTrigger>
@@ -75,7 +75,7 @@ export default function LearningOutcomes() {
 
                 {/* Progress bar */}
                 <div>
-                  <div className="flex justify-between text-xs text-gray-500 mb-1">
+                  <div className="flex justify-between text-xs text-gray-600 mb-1">
                     <span>Progress</span>
                     <span className="font-semibold">{pct}%</span>
                   </div>

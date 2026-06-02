@@ -60,13 +60,13 @@ export default function Simulator() {
   if (!started) return (
     <div className="space-y-5">
       <h1 className="text-2xl font-bold text-[#1A1A1A]">Budget Simulator</h1>
-      <p className="text-sm text-gray-500">Practice financial decisions in a safe, fictional semester scenario.</p>
+      <p className="text-sm text-gray-600">Practice financial decisions in a safe, fictional semester scenario.</p>
       <div className="bg-white rounded-2xl p-5 shadow-sm space-y-4">
         <div className="flex items-start gap-3">
-          <span className="text-3xl">🎮</span>
-          <div>
-            <p className="font-bold text-[#1A1A1A]">Semester Kickoff</p>
-            <p className="text-sm text-gray-600 mt-1">4 weeks · $450/week income · 7 events</p>
+        <span className="text-3xl">🎮</span>
+        <div>
+          <p className="font-bold text-[#1A1A1A]">Semester Kickoff</p>
+          <p className="text-sm text-gray-700 mt-1">4 weeks · $450/week income · 7 events</p>
           </div>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -90,19 +90,19 @@ export default function Simulator() {
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-5">
         <div className="bg-[#1B4332] rounded-2xl p-5 text-center">
           <div className="w-14 h-14 rounded-full bg-[#D1FAE5] flex items-center justify-center text-2xl mx-auto mb-2">🏆</div>
-          <p className="text-[#D1FAE5] text-xs font-semibold">Semester complete!</p>
+          <p className="text-white/80 text-xs font-semibold">Semester complete!</p>
           <p className="text-white text-xl font-bold mt-1">Flat Budget Score</p>
-          <p className="text-[#D1FAE5] text-3xl font-bold mt-2">${remaining.toFixed(0)} remaining</p>
-          <p className="text-[#D1FAE5]/70 text-sm mt-1">
+          <p className="text-white text-3xl font-bold mt-2">${remaining.toFixed(0)} remaining</p>
+          <p className="text-white/80 text-sm mt-1">
             {remaining >= 300 ? "Strong budgeting — you planned ahead! 💚" :
              remaining >= 100 ? "Solid effort — a little more buffer next time. 👍" :
              "Tight finish — consider boosting your emergency buffer. 💪"}
           </p>
         </div>
         <div className="grid grid-cols-3 gap-3">
-          <div className="bg-white rounded-2xl p-3 text-center shadow-sm"><DollarSign className="w-5 h-5 text-[#1B4332] mx-auto mb-1"/><p className="font-bold text-[#1A1A1A]">${remaining.toFixed(0)}</p><p className="text-xs text-gray-500">Left over</p></div>
-          <div className="bg-white rounded-2xl p-3 text-center shadow-sm"><Heart className="w-5 h-5 text-red-400 mx-auto mb-1"/><p className="font-bold text-[#1A1A1A]">{happiness}%</p><p className="text-xs text-gray-500">Happiness</p></div>
-          <div className="bg-white rounded-2xl p-3 text-center shadow-sm"><Brain className="w-5 h-5 text-purple-400 mx-auto mb-1"/><p className="font-bold text-[#1A1A1A]">{wisdom}</p><p className="text-xs text-gray-500">Wisdom</p></div>
+          <div className="bg-white rounded-2xl p-3 text-center shadow-sm"><DollarSign className="w-5 h-5 text-[#1B4332] mx-auto mb-1"/><p className="font-bold text-[#1A1A1A]">${remaining.toFixed(0)}</p><p className="text-xs text-gray-600">Left over</p></div>
+          <div className="bg-white rounded-2xl p-3 text-center shadow-sm"><Heart className="w-5 h-5 text-red-400 mx-auto mb-1"/><p className="font-bold text-[#1A1A1A]">{happiness}%</p><p className="text-xs text-gray-600">Happiness</p></div>
+          <div className="bg-white rounded-2xl p-3 text-center shadow-sm"><Brain className="w-5 h-5 text-purple-400 mx-auto mb-1"/><p className="font-bold text-[#1A1A1A]">{wisdom}</p><p className="text-xs text-gray-600">Wisdom</p></div>
         </div>
         <div className="bg-white rounded-2xl p-4 shadow-sm">
           <p className="text-sm font-bold text-[#1A1A1A] mb-3">Your decisions</p>
@@ -131,7 +131,7 @@ export default function Simulator() {
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-xs text-gray-500">Semester Kickoff</p>
+          <p className="text-xs text-gray-600">Semester Kickoff</p>
           <p className="text-sm font-bold text-[#1A1A1A]">Event {eventIdx + 1} of {EVENTS.length}</p>
         </div>
         <KolbDiagram activePhase={ev.type === 'decision' ? 'apply' : 'experience'} />

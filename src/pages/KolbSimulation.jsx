@@ -62,7 +62,7 @@ export default function KolbSimulation() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-lg font-bold text-[#1A1A1A]">{scene.title}</h1>
-          <p className="text-xs text-gray-500">{mod.title}</p>
+          <p className="text-xs text-gray-600">{mod.title}</p>
         </div>
         <KolbDiagram activePhase={phase} />
       </div>
@@ -126,7 +126,7 @@ export default function KolbSimulation() {
                         placeholder="0"
                         className="flex-1 h-12 rounded-xl border-2 border-[#D1FAE5] text-center text-xl font-bold text-[#1B4332] outline-none focus:border-[#1B4332] bg-[#EEF5F0]"
                       />
-                      <span className="text-sm text-gray-500">{scene.predictionUnit}</span>
+                      <span className="text-sm text-gray-600">{scene.predictionUnit}</span>
                     </div>
                   </div>
                 </TooltipTrigger>
@@ -159,7 +159,7 @@ export default function KolbSimulation() {
               <div className="space-y-2.5">
                 <div>
                   <div className="flex justify-between text-xs mb-1">
-                    <span className="text-gray-500 font-medium">YOUR GUESS</span>
+                    <span className="text-gray-600 font-medium">YOUR GUESS</span>
                     <span className="font-bold text-[#1A1A1A]">${predVal.toFixed(0)}</span>
                   </div>
                   <div className="h-4 bg-gray-100 rounded-full overflow-hidden">
@@ -168,14 +168,14 @@ export default function KolbSimulation() {
                 </div>
                 <div>
                   <div className="flex justify-between text-xs mb-1">
-                    <span className="text-gray-500 font-medium">ACTUAL BILL</span>
+                    <span className="text-gray-600 font-medium">ACTUAL BILL</span>
                     <span className="font-bold text-[#1B4332]">${scene.actualOutcome}</span>
                   </div>
                   <div className="h-4 bg-gray-100 rounded-full overflow-hidden">
                     <div className="h-full bg-[#1B4332] rounded-full transition-all duration-700" style={{ width: `${actualPct}%` }} />
                   </div>
                 </div>
-                <p className="text-xs text-gray-500 text-right">Deviation: {deviationPct}%</p>
+                <p className="text-xs text-gray-600 text-right">Deviation: {deviationPct}%</p>
               </div>
             </div>
 
@@ -213,11 +213,11 @@ export default function KolbSimulation() {
 
             {/* Concept card */}
             <div className="bg-[#1B4332] rounded-2xl p-4 shadow-sm">
-              <p className="text-xs font-bold text-[#D1FAE5] uppercase tracking-wider mb-1">
+              <p className="text-xs font-bold text-white/80 uppercase tracking-wider mb-1">
                 💡 Concept — {scene.conceptCard.principle}
               </p>
               <p className="text-white text-sm font-semibold mb-2">{scene.conceptCard.title}</p>
-              <p className="text-[#D1FAE5] text-sm leading-relaxed">{scene.conceptCard.body}</p>
+              <p className="text-white/90 text-sm leading-relaxed">{scene.conceptCard.body}</p>
             </div>
 
             <button onClick={() => setPhase('apply')}

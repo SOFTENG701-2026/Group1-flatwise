@@ -81,7 +81,7 @@ export default function AppLayout() {
             return (
               <Link key={item.path} to={item.path}
                 className={cn("flex-1 flex flex-col items-center py-2.5 gap-0.5 text-xs font-medium transition-all",
-                  active ? "text-[#1B4332]" : "text-gray-400")}>
+                  active ? "text-[#1B4332]" : "text-gray-500")}>
                 <Icon className={cn("w-5 h-5", active && "stroke-[2.5]")} />
                 {item.label}
               </Link>

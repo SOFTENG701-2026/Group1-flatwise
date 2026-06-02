@@ -108,19 +108,19 @@ function SplitStage({ onConfirm }) {
           <TheoryPill label="Social constructivism" color="#FEF9C3" text="#92400E" tooltip="Social Constructivism — learning through realistic collaborative social scenarios." />
         </div>
         <h1 className="text-xl font-bold text-[#1A1A1A]">{SCENARIO.title}</h1>
-        <p className="text-sm text-gray-500">Choose how to divide the bill fairly</p>
+        <p className="text-sm text-gray-600">Choose how to divide the bill fairly</p>
       </div>
 
       {/* Bill summary card */}
       <div className="bg-[#1B4332] rounded-2xl p-5 text-white">
-        <p className="text-xs font-semibold text-[#D1FAE5] uppercase tracking-wide mb-1">Power Bill</p>
+        <p className="text-xs font-semibold text-white/80 uppercase tracking-wide mb-1">Power Bill</p>
         <p className="text-4xl font-bold">${SCENARIO.amount}</p>
-        <p className="text-sm text-[#D1FAE5] mt-1">Due {SCENARIO.dueDate}</p>
+        <p className="text-sm text-white/80 mt-1">Due {SCENARIO.dueDate}</p>
         <div className="flex gap-2 mt-3">
           {SCENARIO.flatmates.map(f => (
             <div key={f.name} className="bg-white/10 rounded-xl px-3 py-1.5 text-center">
               <p className="text-sm font-bold">{f.name}</p>
-              <p className="text-xs text-[#D1FAE5]">{f.usage}% usage</p>
+              <p className="text-xs text-white/80">{f.usage}% usage</p>
             </div>
           ))}
         </div>
@@ -128,14 +128,14 @@ function SplitStage({ onConfirm }) {
 
       {/* Split method selector */}
       <div className="space-y-2">
-        <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Select split method</p>
+        <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">Select split method</p>
         {METHODS.map(m => (
           <button key={m.id} onClick={() => setMethod(m.id)}
             className={`w-full text-left bg-white rounded-2xl p-4 shadow-sm border-2 transition-all flex items-center gap-3 ${method === m.id ? 'border-[#1B4332]' : 'border-transparent hover:border-[#D1FAE5]'}`}>
             <span className="text-2xl">{m.emoji}</span>
             <div className="flex-1">
               <p className="text-sm font-semibold text-[#1A1A1A]">{m.label}</p>
-              <p className="text-xs text-gray-400">{m.desc}</p>
+              <p className="text-xs text-gray-600">{m.desc}</p>
             </div>
             {method === m.id && <Check className="w-5 h-5 text-[#1B4332] shrink-0" />}
           </button>
@@ -216,7 +216,7 @@ function ComplicationStage({ method, shares, onReset }) {
         <span className="text-2xl">✅</span>
         <div>
           <p className="text-sm font-semibold text-[#1B4332]">Split agreed: {methodLabel}</p>
-          <p className="text-xs text-gray-500">{shares.map(f => `${f.name} $${f.share.toFixed(2)}`).join(' · ')}</p>
+          <p className="text-xs text-gray-600">{shares.map(f => `${f.name} $${f.share.toFixed(2)}`).join(' · ')}</p>
         </div>
       </div>
 
@@ -237,16 +237,16 @@ function ComplicationStage({ method, shares, onReset }) {
 
       {!showOutcome ? (
         <div className="space-y-2">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide">How does the flat respond?</p>
+          <p className="text-xs font-semibold text-gray-600 uppercase tracking-wide">How does the flat respond?</p>
           {COMPLICATION_OPTIONS.map(opt => (
             <button key={opt.id} onClick={() => handleSelect(opt)}
               className={`w-full text-left bg-white rounded-2xl p-4 shadow-sm border-2 transition-all ${selected?.id === opt.id ? 'border-[#1B4332]' : 'border-transparent hover:border-[#D1FAE5]'}`}>
               <div className="flex items-start justify-between gap-2">
                 <div>
                   <p className="text-sm font-semibold text-[#1A1A1A]">{opt.label}</p>
-                  <p className="text-xs text-gray-500 mt-0.5 italic">"{opt.description}"</p>
+                  <p className="text-xs text-gray-600 mt-0.5 italic">"{opt.description}"</p>
                 </div>
-                <span className="text-xs text-gray-400 shrink-0 mt-0.5">{opt.tone}</span>
+                <span className="text-xs text-gray-600 shrink-0 mt-0.5">{opt.tone}</span>
               </div>
             </button>
           ))}

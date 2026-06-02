@@ -29,7 +29,7 @@ function ChatBubble({ from, text, avatar, name }) {
         <div className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold shrink-0"
           style={{ backgroundColor: avatar.color }}>{avatar.initials}</div>
         <div className="max-w-[75%]">
-          <p className="text-xs text-gray-400 mb-1 ml-1">{name}</p>
+          <p className="text-xs text-gray-600 mb-1 ml-1">{name}</p>
           <div className="bg-gray-100 rounded-2xl rounded-bl-sm px-4 py-2.5">
             <p className="text-sm text-gray-800">{text}</p>
           </div>
@@ -112,7 +112,7 @@ export default function NegotiationScenario() {
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center space-y-2 py-4">
           <div className="text-5xl mb-2">{isGood ? '🏆' : '💪'}</div>
           <h2 className="text-xl font-bold text-[#1A1A1A]">{isGood ? 'Excellent negotiator!' : 'Room to grow'}</h2>
-          <p className="text-sm text-gray-500">You navigated {scenario.rounds.length} rounds of a real flatting conflict</p>
+          <p className="text-sm text-gray-600">You navigated {scenario.rounds.length} rounds of a real flatting conflict</p>
         </motion.div>
 
         <div className="bg-white rounded-2xl p-5 shadow-sm space-y-3">
@@ -165,7 +165,7 @@ export default function NegotiationScenario() {
           <TheoryPill label="Bloom: Evaluate" color="#D1FAE5" text="#1B4332" tooltip="Bloom's Taxonomy — Evaluate level. Learners make judgements about the effectiveness of different negotiation strategies." />
         </div>
         <h1 className="text-xl font-bold text-[#1A1A1A]">{scenario.title}</h1>
-        <p className="text-sm text-gray-500">{scenario.subtitle}</p>
+        <p className="text-sm text-gray-600">{scenario.subtitle}</p>
       </div>
 
       {/* Banner */}
@@ -179,7 +179,7 @@ export default function NegotiationScenario() {
         {scenario.chips.map((chip, i) => (
           <div key={i} className="bg-white rounded-xl px-3 py-2 shadow-sm text-center min-w-[90px]">
             <p className="text-xs font-bold text-[#1A1A1A]">{chip.value}</p>
-            <p className="text-xs text-gray-400">{chip.label}</p>
+            <p className="text-xs text-gray-600">{chip.label}</p>
           </div>
         ))}
       </div>
@@ -189,7 +189,7 @@ export default function NegotiationScenario() {
         {scenario.rounds.map((_, i) => (
           <div key={i} className={`flex-1 h-1.5 rounded-full transition-all ${i < round ? 'bg-[#1B4332]' : i === round ? 'bg-[#D1FAE5] border border-[#1B4332]' : 'bg-gray-200'}`} />
         ))}
-        <span className="text-xs text-gray-400 ml-1">Round {round + 1}/{scenario.rounds.length}</span>
+        <span className="text-xs text-gray-600 ml-1">Round {round + 1}/{scenario.rounds.length}</span>
       </div>
 
       {/* Chat interface */}
@@ -206,12 +206,12 @@ export default function NegotiationScenario() {
       {/* Response options */}
       {!showOutcome && (
         <div className="space-y-2">
-          <p className="text-xs text-gray-500 font-medium">Choose your response:</p>
+          <p className="text-xs text-gray-600 font-medium">Choose your response:</p>
           {currentRound.options.map((opt, i) => (
             <button key={i} onClick={() => handleSelect(i)}
               className={`w-full text-left bg-white rounded-xl p-4 shadow-sm border-2 transition-all ${selectedOption === i ? 'border-[#1B4332]' : 'border-transparent hover:border-[#D1FAE5]'}`}>
               <p className="text-sm font-semibold text-[#1A1A1A] mb-1">"{opt.text}"</p>
-              <p className="text-xs text-gray-400 italic">{opt.tone}</p>
+              <p className="text-xs text-gray-600 italic">{opt.tone}</p>
             </button>
           ))}
         </div>

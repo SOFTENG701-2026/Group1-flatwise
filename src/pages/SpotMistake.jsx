@@ -10,7 +10,7 @@ function MiniBarChart({ data }) {
   const maxVal = data.realistic * 1.2;
   return (
     <div className="bg-gray-50 rounded-xl p-3 mt-2">
-      <p className="text-xs font-medium text-gray-500 mb-2">{data.label}</p>
+      <p className="text-xs font-medium text-gray-600 mb-2">{data.label}</p>
       <div className="space-y-2">
         <div>
           <div className="flex justify-between text-xs mb-1">
@@ -137,7 +137,7 @@ export default function SpotMistake() {
           <TheoryPill label="Cognitivism: Error detection" color="#E0E7FF" text="#3730A3" tooltip="Cognitivism — Error detection tasks train learners to notice systematic mistakes, improving metacognitive accuracy." />
         </div>
         <h1 className="text-xl font-bold text-[#1A1A1A]">{budget.title}</h1>
-        <p className="text-sm text-gray-500">{budget.subtitle}</p>
+        <p className="text-sm text-gray-600">{budget.subtitle}</p>
       </div>
 
       {/* Instruction card */}
@@ -145,11 +145,11 @@ export default function SpotMistake() {
         <div className="w-10 h-10 bg-[#FEF9C3] rounded-xl flex items-center justify-center text-xl shrink-0">🔍</div>
         <div className="flex-1">
           <p className="text-sm font-semibold text-[#1A1A1A]">Find the 3 mistakes</p>
-          <p className="text-xs text-gray-500">Tap any line item you think contains an error</p>
+          <p className="text-xs text-gray-600">Tap any line item you think contains an error</p>
         </div>
         <div className="text-right">
           <p className="text-2xl font-bold text-[#1B4332]">{foundMistakes.length}/3</p>
-          <p className="text-xs text-gray-400">found</p>
+          <p className="text-xs text-gray-600">found</p>
         </div>
       </div>
 
@@ -158,7 +158,7 @@ export default function SpotMistake() {
         {/* Paper header */}
         <div className="bg-white border-b border-gray-100 px-5 pt-5 pb-3">
           <p className="font-bold text-[#1A1A1A] text-base" style={{ fontFamily: 'Georgia, serif' }}>{budget.title}</p>
-          <p className="text-xs text-gray-400 mt-0.5">{budget.dateNote}</p>
+          <p className="text-xs text-gray-600 mt-0.5">{budget.dateNote}</p>
           {budget.headerNote && (
             <div className="mt-2 inline-flex items-center gap-1.5 bg-[#D1FAE5] text-[#1B4332] text-xs font-medium px-3 py-1 rounded-full">
               📌 {budget.headerNote}
@@ -169,7 +169,7 @@ export default function SpotMistake() {
         <div className="px-4 py-3 space-y-4">
           {budget.sections.map((section) => (
             <div key={section.heading}>
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 px-1">{section.heading}</p>
+              <p className="text-xs font-bold text-gray-600 uppercase tracking-widest mb-2 px-1">{section.heading}</p>
               <div className="space-y-1">
                 {section.items.map((item) => {
                   const isFound = foundMistakes.includes(item.id);
@@ -205,7 +205,7 @@ export default function SpotMistake() {
 
         {wrongTaps > 0 && (
           <div className="px-4 pb-3">
-            <p className="text-xs text-gray-400">Wrong taps: {wrongTaps} (−{wrongTaps * 10} points)</p>
+            <p className="text-xs text-gray-600">Wrong taps: {wrongTaps} (−{wrongTaps * 10} points)</p>
           </div>
         )}
       </div>
@@ -226,17 +226,17 @@ export default function SpotMistake() {
             </div>
             <div className="flex justify-between items-center bg-gray-50 rounded-xl px-4 py-2 mb-3">
               <div className="text-center">
-                <p className="text-xs text-gray-400">Budgeted</p>
+                <p className="text-xs text-gray-600">Budgeted</p>
                 <p className="font-bold text-red-500 line-through">{openSheet.value}</p>
               </div>
               <ArrowRight className="w-4 h-4 text-gray-400" />
               <div className="text-center">
-                <p className="text-xs text-gray-400">Should be</p>
+                <p className="text-xs text-gray-600">Should be</p>
                 <p className="font-bold text-[#1B4332]">{openSheet.correctValue}</p>
               </div>
             </div>
             <p className="text-sm text-gray-700 leading-relaxed mb-2">{openSheet.mistake.explanation}</p>
-            <p className="text-sm text-gray-500 italic leading-relaxed">{openSheet.mistake.consequence}</p>
+            <p className="text-sm text-gray-600 italic leading-relaxed">{openSheet.mistake.consequence}</p>
             {openSheet.mistake.chartData && <MiniBarChart data={openSheet.mistake.chartData} />}
             <button onClick={() => setOpenSheet(null)}
               className="w-full bg-[#1B4332] text-white font-semibold py-3 rounded-xl text-sm mt-4">

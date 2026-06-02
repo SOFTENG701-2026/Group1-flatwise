@@ -44,7 +44,7 @@ export default function Dashboard() {
       {/* Greeting */}
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}>
         <h1 className="text-2xl font-bold text-[#1A1A1A]">Hey {name} 👋</h1>
-        <p className="text-sm text-gray-500 mt-0.5">
+        <p className="text-sm text-gray-600 mt-0.5">
           {completed.length === 0 ?
           "Start your budgeting journey — pick a module below." :
           `${completed.length} module${completed.length !== 1 ? 's' : ''} complete. Keep the momentum going!`}
@@ -67,14 +67,14 @@ export default function Dashboard() {
               <div className="rounded-2xl bg-[#1B4332] p-5 cursor-help">
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="text-[#D1FAE5] text-xs font-medium uppercase tracking-wider">Current level</p>
+                    <p className="text-white/80 text-xs font-medium uppercase tracking-wider">Current level</p>
                     <p className="text-white text-2xl font-bold mt-0.5">Level {level} — {levelTitle}</p>
-                    <p className="text-[#D1FAE5] text-sm mt-1">{xp} XP total</p>
+                    <p className="text-white/80 text-sm mt-1">{xp} XP total</p>
                   </div>
                   <Star className="w-8 h-8 text-[#F59E0B]" fill="#F59E0B" />
                 </div>
                 <div className="mt-4">
-                  <div className="flex justify-between text-xs text-[#D1FAE5] mb-1.5">
+                  <div className="flex justify-between text-xs text-white/80 mb-1.5">
                     <span>Level {level}</span>
                     {nextXP && <span>Level {level + 1} at {nextXP} XP</span>}
                   </div>
@@ -97,17 +97,17 @@ export default function Dashboard() {
         <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
           <Flame className="w-5 h-5 text-[#F59E0B] mx-auto mb-1" />
           <p className="text-lg font-bold text-[#1A1A1A]">{sessionStreak}</p>
-          <p className="text-xs text-gray-500">Streak</p>
+          <p className="text-xs text-gray-600">Streak</p>
         </div>
         <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
           <Star className="w-5 h-5 text-[#F59E0B] mx-auto mb-1" fill="#F59E0B" />
           <p className="text-lg font-bold text-[#1A1A1A]">{xp}</p>
-          <p className="text-xs text-gray-500">XP</p>
+          <p className="text-xs text-gray-600">XP</p>
         </div>
         <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
           <BookOpen className="w-5 h-5 text-[#1B4332] mx-auto mb-1" />
           <p className="text-lg font-bold text-[#1A1A1A]">{completed.length}/{MODULES.length}</p>
-          <p className="text-xs text-gray-500">Modules</p>
+          <p className="text-xs text-gray-600">Modules</p>
         </div>
       </div>
 
@@ -148,8 +148,8 @@ export default function Dashboard() {
                     {allDone ? '✓' : tier.number}
                   </div>
                   <div className="flex-1">
-                    <span className={`text-sm font-semibold ${unlocked ? 'text-[#1A1A1A]' : 'text-gray-400'}`}>{tier.title}</span>
-                    <span className="text-xs text-gray-500 ml-2">{tier.subtitle}</span>
+                    <span className={`text-sm font-semibold ${unlocked ? 'text-[#1A1A1A]' : 'text-gray-500'}`}>{tier.title}</span>
+                    <span className="text-xs text-gray-600 ml-2">{tier.subtitle}</span>
                   </div>
                   {!unlocked && <span className="text-xs bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full flex items-center gap-1"><Lock className="w-3 h-3" />Locked</span>}
                   {unlocked && !allDone && <span className="text-xs text-gray-500">{tierDone}/{tierModules.length}</span>}
@@ -174,7 +174,7 @@ export default function Dashboard() {
                         </span>
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-semibold text-[#1A1A1A] truncate">{mod.title}</p>
-                          <p className="text-xs text-gray-500 truncate">{mod.subtitle}</p>
+                          <p className="text-xs text-gray-600 truncate">{mod.subtitle}</p>
                         </div>
                         {done ?
                         <span className="shrink-0 flex items-center gap-1 text-xs font-medium text-[#1B4332] bg-[#D1FAE5] px-2 py-0.5 rounded-full">
@@ -215,9 +215,9 @@ export default function Dashboard() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-sm font-bold" style={{ color: badge.textColor }}>{badge.name}</p>
-                    <p className="text-xs text-gray-500 leading-snug mt-0.5">{badge.description}</p>
+                    <p className="text-xs text-gray-600 leading-snug mt-0.5">{badge.description}</p>
                   </div>
-                  <span className="text-xs font-medium text-gray-400 shrink-0">+{mod.xpReward} XP</span>
+                  <span className="text-xs font-medium text-gray-600 shrink-0">+{mod.xpReward} XP</span>
                 </div>);
           })}
           </div>

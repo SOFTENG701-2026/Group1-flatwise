@@ -18,7 +18,7 @@ export default function ModuleIntro() {
           <span className="text-3xl">{mod.icon}</span>
           <div>
             <h1 className="text-xl font-bold text-white">{mod.title}</h1>
-            <p className="text-xs text-[#D1FAE5]/80 mt-0.5">{mod.subtitle}</p>
+            <p className="text-xs text-white/80 mt-0.5">{mod.subtitle}</p>
           </div>
         </div>
         {/* Theory pills */}
@@ -36,7 +36,7 @@ export default function ModuleIntro() {
 
       {/* What you'll do */}
       <div className="bg-white rounded-2xl p-4 shadow-sm">
-        <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-3">What you'll do</p>
+        <p className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-3">What you'll do</p>
         <ul className="space-y-2">
           {mod.outcomes.map((o, i) => (
             <li key={i} className="flex items-start gap-2 text-sm text-[#1A1A1A]">

@@ -83,7 +83,7 @@ function ChallengeCard({ challenge, flatGroup, currentUser, onOptIn, onChallenge
         {/* Progress bar */}
         {optedInMembers.length > 0 && (
           <div>
-            <div className="flex justify-between text-xs text-gray-400 mb-1">
+            <div className="flex justify-between text-xs text-gray-600 mb-1">
               <span>Flat progress</span><span>{completedMembers.length}/{optedInMembers.length} done</span>
             </div>
             <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
@@ -123,7 +123,7 @@ function ChallengeCard({ challenge, flatGroup, currentUser, onOptIn, onChallenge
                     Submit
                   </button>
                 </div>
-                <p className="text-xs text-gray-400">{challenge.scenario.unit}</p>
+                <p className="text-xs text-gray-600">{challenge.scenario.unit}</p>
               </>
             ) : (
               <p className="text-xs text-[#1B4332] font-medium">✓ Your prediction submitted — waiting for flatmates...</p>
@@ -145,13 +145,13 @@ function ChallengeCard({ challenge, flatGroup, currentUser, onOptIn, onChallenge
               <span className="text-[#1B4332] font-semibold">Actual</span>
               <span className="font-bold text-[#1B4332]">{challenge.scenario.actualLabel}</span>
             </div>
-            <p className="text-xs text-gray-500 mt-1">💬 Chat about it (max 100 chars each):</p>
+            <p className="text-xs text-gray-600 mt-1">💬 Chat about it (max 100 chars each):</p>
           </div>
         )}
 
         {/* Footer */}
         <div className="flex items-center justify-between pt-1">
-          <span className="text-xs text-gray-400">⏳ {challenge.daysLeft} days left</span>
+          <span className="text-xs text-gray-600">⏳ {challenge.daysLeft} days left</span>
           <div className="flex items-center gap-1.5 bg-[#EEF5F0] rounded-xl px-3 py-1.5">
             <span className="text-sm">{challenge.reward.xpBonus > 0 ? `+${challenge.reward.xpBonus} XP + ` : ''}{FLAT_VISUALISATION_ITEMS[challenge.reward.itemId]?.emoji}</span>
             <span className="text-xs text-[#1B4332] font-medium">{challenge.reward.itemLabel}</span>
@@ -180,7 +180,7 @@ function FlatVis({ unlockedItems }) {
           return (
             <div key={id} className="flex flex-col items-center gap-1">
               <span className="text-3xl">{item.emoji}</span>
-              <span className="text-xs text-gray-400">{item.label}</span>
+              <span className="text-xs text-gray-600">{item.label}</span>
             </div>
           );
         })}
@@ -310,7 +310,7 @@ export default function MyFlat() {
       <div className="space-y-5">
         <div>
           <h1 className="text-2xl font-bold text-[#1A1A1A]">My Flat 👥</h1>
-          <p className="text-sm text-gray-500 mt-0.5">Study together, learn together</p>
+          <p className="text-sm text-gray-600 mt-0.5">Study together, learn together</p>
         </div>
 
         <div className="flex items-center gap-2 bg-[#EEF5F0] rounded-xl px-3 py-2">
@@ -322,7 +322,7 @@ export default function MyFlat() {
         <div className="bg-white rounded-2xl p-5 shadow-sm space-y-3">
           <div className="w-10 h-10 bg-[#D1FAE5] rounded-xl flex items-center justify-center text-xl">🏠</div>
           <h2 className="font-bold text-[#1A1A1A]">Create a flat group</h2>
-          <p className="text-sm text-gray-500">Generate a code and share it with your flatmates</p>
+          <p className="text-sm text-gray-600">Generate a code and share it with your flatmates</p>
           <button onClick={handleCreate} className="w-full bg-[#1B4332] text-white font-semibold py-3 rounded-xl text-sm">
             Create my flat →
           </button>
@@ -332,7 +332,7 @@ export default function MyFlat() {
         <div className="bg-white rounded-2xl p-5 shadow-sm space-y-3">
           <div className="w-10 h-10 bg-[#FEF9C3] rounded-xl flex items-center justify-center text-xl">🔑</div>
           <h2 className="font-bold text-[#1A1A1A]">Join a flat</h2>
-          <p className="text-sm text-gray-500">Enter a code from your flatmate</p>
+          <p className="text-sm text-gray-600">Enter a code from your flatmate</p>
           <div className="flex gap-2">
             <input value={joinCode} onChange={e => setJoinCode(e.target.value.toUpperCase())}
               placeholder="FLAT-XXXX" className="flex-1 border border-gray-200 rounded-xl px-4 py-2.5 text-sm font-mono focus:outline-none focus:border-[#1B4332]" />
@@ -374,10 +374,10 @@ export default function MyFlat() {
 
       {/* Flat learning progress card */}
       <div className="bg-[#1B4332] rounded-2xl p-5 text-white">
-        <p className="text-xs font-semibold text-[#D1FAE5] uppercase tracking-wide mb-1">FLAT LEARNING PROGRESS</p>
+        <p className="text-xs font-semibold text-white/80 uppercase tracking-wide mb-1">FLAT LEARNING PROGRESS</p>
         <p className="text-2xl font-bold">{totalModulesInFlat()} modules</p>
-        <p className="text-sm text-[#D1FAE5] mt-0.5">completed across the flat this week</p>
-        <p className="text-xs text-white/60 mt-2">~{(flatGroup.members || []).length} flatmates learning together</p>
+        <p className="text-sm text-white/80 mt-0.5">completed across the flat this week</p>
+        <p className="text-xs text-white/70 mt-2">~{(flatGroup.members || []).length} flatmates learning together</p>
       </div>
 
       {/* Challenges heading */}
@@ -413,7 +413,7 @@ export default function MyFlat() {
                       <span className="text-xl">{c.emoji}</span>
                       <div className="flex-1">
                         <p className="text-sm font-medium text-gray-600">{c.title}</p>
-                        <p className="text-xs text-gray-400">{c.reward.itemLabel} unlocked</p>
+                        <p className="text-xs text-gray-600">{c.reward.itemLabel} unlocked</p>
                       </div>
                       <span className="text-green-500 text-sm">✓</span>
                     </div>
@@ -454,7 +454,7 @@ export default function MyFlat() {
             );
           })}
         </div>
-        <p className="text-xs text-gray-400 text-center">Everyone learns at their own pace 🙂</p>
+        <p className="text-xs text-gray-600 text-center">Everyone learns at their own pace 🙂</p>
       </div>
 
       {/* Challenge info bottom sheet */}
@@ -468,7 +468,7 @@ export default function MyFlat() {
               <p className="text-sm text-gray-600 leading-relaxed">
                 Challenges are optional. Designed to help your flat learn together — not to create pressure around money. Opt out anytime.
               </p>
-              <p className="text-sm text-gray-500 mt-3 leading-relaxed">
+              <p className="text-sm text-gray-600 mt-3 leading-relaxed">
                 Completing challenges together unlocks shared items in your flat visualisation — a fun way to see your collective learning progress.
               </p>
               <button onClick={() => setShowInfoSheet(false)}

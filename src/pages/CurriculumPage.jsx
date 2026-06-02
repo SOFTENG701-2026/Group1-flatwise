@@ -17,7 +17,7 @@ export default function CurriculumPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-2xl font-bold text-[#1A1A1A]">Learning Modules</h1>
-        <p className="text-sm text-gray-500 mt-1">Complete each tier to unlock the next</p>
+        <p className="text-sm text-gray-600 mt-1">Complete each tier to unlock the next</p>
       </div>
 
       {TIERS.map((tier, tIdx) => {
@@ -31,11 +31,11 @@ export default function CurriculumPage() {
             <div className={`rounded-2xl p-4 mb-3 ${unlocked ? 'bg-[#1B4332]' : 'bg-gray-100'}`}>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className={`text-xs font-semibold uppercase tracking-wider ${unlocked ? 'text-[#D1FAE5]' : 'text-gray-400'}`}>
+                  <p className={`text-xs font-semibold uppercase tracking-wider ${unlocked ? 'text-white/80' : 'text-gray-400'}`}>
                     Tier {tier.number}
                   </p>
                   <h2 className={`text-lg font-bold mt-0.5 ${unlocked ? 'text-white' : 'text-gray-400'}`}>{tier.title}</h2>
-                  <p className={`text-xs mt-1 ${unlocked ? 'text-[#D1FAE5]/80' : 'text-gray-400'}`}>{tier.subtitle}</p>
+                  <p className={`text-xs mt-1 ${unlocked ? 'text-white/70' : 'text-gray-400'}`}>{tier.subtitle}</p>
                 </div>
                 {!unlocked ?
                 <div className="flex flex-col items-center gap-1">
@@ -44,8 +44,8 @@ export default function CurriculumPage() {
                   </div> :
 
                 <div className="text-right">
-                    <p className="text-[#D1FAE5] text-sm font-semibold">{tierDone}/{tierModules.length}</p>
-                    <p className="text-[#D1FAE5]/60 text-xs">complete</p>
+                    <p className="text-white text-sm font-semibold">{tierDone}/{tierModules.length}</p>
+                    <p className="text-white/70 text-xs">complete</p>
                   </div>
                 }
               </div>
@@ -97,14 +97,14 @@ export default function CurriculumPage() {
                           <ChevronRight className="w-4 h-4 text-gray-300 shrink-0" />
                           }
                         </div>
-                        <p className="text-xs text-gray-500 mt-0.5">{mod.subtitle}</p>
+                        <p className="text-xs text-gray-600 mt-0.5">{mod.subtitle}</p>
                         <div className="flex flex-wrap gap-1.5 mt-2">
                           {mod.theories.map((t, i) =>
                           <TheoryPill key={i} label={t.label} color={t.color} text={t.text} />
                           )}
                         </div>
                         {/* Scaffolding indicator */}
-                        <div className="mt-2 text-xs text-gray-400 flex items-center gap-1">
+                        <div className="mt-2 text-xs text-gray-600 flex items-center gap-1">
                           <span className={`w-2 h-2 rounded-full ${
                           mod.scaffolding === 'full' ? 'bg-green-400' :
                           mod.scaffolding === 'request' ? 'bg-yellow-400' : 'bg-gray-300'}`
@@ -144,12 +144,12 @@ export default function CurriculumPage() {
                     <p className="text-sm font-bold text-[#1A1A1A]">{s.title}</p>
                     <ChevronRight className="w-4 h-4 text-gray-300 shrink-0" />
                   </div>
-                  <p className="text-xs text-gray-500 mt-0.5">{s.subtitle}</p>
+                  <p className="text-xs text-gray-600 mt-0.5">{s.subtitle}</p>
                   <div className="flex flex-wrap gap-1.5 mt-2">
                     <TheoryPill label="Kolb: Active Experimentation" color="#FEF9C3" text="#92400E" tooltip="Kolb — Active Experimentation phase: practice strategies and observe consequences." />
                     <TheoryPill label="Bloom: Evaluate" color="#D1FAE5" text="#1B4332" tooltip="Bloom — Evaluate: judge the effectiveness of different negotiation approaches." />
                   </div>
-                  <p className="text-xs text-gray-400 mt-2">3 decision rounds · iMessage-style chat</p>
+                  <p className="text-xs text-gray-600 mt-2">3 decision rounds · iMessage-style chat</p>
                 </div>
               </div>
             </Link>
@@ -178,12 +178,12 @@ export default function CurriculumPage() {
                     <p className="text-sm font-bold text-[#1A1A1A]">{b.title}</p>
                     <ChevronRight className="w-4 h-4 text-gray-300 shrink-0" />
                   </div>
-                  <p className="text-xs text-gray-500 mt-0.5">{b.subtitle}</p>
+                  <p className="text-xs text-gray-600 mt-0.5">{b.subtitle}</p>
                   <div className="flex flex-wrap gap-1.5 mt-2">
                     <TheoryPill label="Bloom: Analyse" color="#D1FAE5" text="#1B4332" tooltip="Bloom — Analyse: break down a budget to identify errors and inconsistencies." />
                     <TheoryPill label="Cognitivism: Error detection" color="#E0E7FF" text="#3730A3" tooltip="Cognitivism — Error detection trains learners to notice systematic mistakes." />
                   </div>
-                  <p className="text-xs text-gray-400 mt-2">3 mistakes hidden · Tap to find them</p>
+                  <p className="text-xs text-gray-600 mt-2">3 mistakes hidden · Tap to find them</p>
                 </div>
               </div>
             </Link>

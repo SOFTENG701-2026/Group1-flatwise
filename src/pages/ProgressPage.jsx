@@ -30,7 +30,7 @@ export default function ProgressPage() {
             <div className="bg-[#1B4332] rounded-2xl p-5 cursor-help">
               <div className="flex items-center justify-between mb-3">
                 <div>
-                  <p className="text-[#D1FAE5] text-xs font-semibold">Level {level} — {LEVEL_TITLES[level - 1]}</p>
+                  <p className="text-white/80 text-xs font-semibold">Level {level} — {LEVEL_TITLES[level - 1]}</p>
                   <p className="text-white text-3xl font-bold">{xp} XP</p>
                 </div>
                 <Star className="w-10 h-10 text-[#F59E0B]" fill="#F59E0B" />
@@ -38,7 +38,7 @@ export default function ProgressPage() {
               <div className="w-full h-3 bg-white/20 rounded-full overflow-hidden">
                 <div className="h-full bg-[#D1FAE5] rounded-full" style={{ width: `${levelPct}%` }} />
               </div>
-              {nextXP && <p className="text-[#D1FAE5]/70 text-xs mt-1">{nextXP - xp} XP to Level {level + 1}</p>}
+              {nextXP && <p className="text-white/70 text-xs mt-1">{nextXP - xp} XP to Level {level + 1}</p>}
             </div>
           </TooltipTrigger>
           <TooltipContent className="text-xs max-w-xs">
@@ -53,17 +53,17 @@ export default function ProgressPage() {
         <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
           <Flame className="w-5 h-5 text-[#F59E0B] mx-auto mb-1" />
           <p className="text-xl font-bold text-[#1A1A1A]">{streak}</p>
-          <p className="text-xs text-gray-500">Streak</p>
+          <p className="text-xs text-gray-600">Streak</p>
         </div>
         <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
           <BookOpen className="w-5 h-5 text-[#1B4332] mx-auto mb-1" />
           <p className="text-xl font-bold text-[#1A1A1A]">{completed.length}/{MODULES.length}</p>
-          <p className="text-xs text-gray-500">Modules</p>
+          <p className="text-xs text-gray-600">Modules</p>
         </div>
         <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
           <Trophy className="w-5 h-5 text-[#F59E0B] mx-auto mb-1" />
           <p className="text-xl font-bold text-[#1A1A1A]">{watchedBiases.length}</p>
-          <p className="text-xs text-gray-500">Biases tracked</p>
+          <p className="text-xs text-gray-600">Biases tracked</p>
         </div>
       </div>
 
@@ -105,10 +105,10 @@ export default function ProgressPage() {
       <div className="bg-white rounded-2xl p-4 shadow-sm">
         <div className="flex items-center justify-between mb-3">
           <p className="text-sm font-bold text-[#1A1A1A]">Biases to Watch</p>
-          <span className="text-xs text-gray-500 bg-gray-100 px-2 py-0.5 rounded-full">Cognitivism</span>
+          <span className="text-xs text-gray-600 bg-gray-100 px-2 py-0.5 rounded-full">Cognitivism</span>
         </div>
         {watchedBiases.length === 0 ? (
-          <p className="text-xs text-gray-400 text-center py-3">No biases tracked yet — complete a simulation to detect them.</p>
+          <p className="text-xs text-gray-600 text-center py-3">No biases tracked yet — complete a simulation to detect them.</p>
         ) : (
           <div className="space-y-2">
             {watchedBiases.map(biasId => {
