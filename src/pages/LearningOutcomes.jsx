@@ -23,7 +23,7 @@ export default function LearningOutcomes() {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <p className="text-xs text-gray-600 mt-1 cursor-help underline decoration-dotted">
+              <p className="text-sm text-gray-600 mt-1 cursor-help underline decoration-dotted">
                 Aligned to Bloom's Revised Taxonomy (Anderson & Krathwohl, 2001)
               </p>
             </TooltipTrigger>
@@ -54,13 +54,13 @@ export default function LearningOutcomes() {
                       {outcome.number}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <p className="text-sm font-semibold text-[#1A1A1A]">
+                      <p className="text-base font-semibold text-[#1A1A1A]">
                         <span className="font-bold" style={{ color: outcome.textColor }}>{outcome.bloomVerb} </span>
                         {outcome.description.replace(outcome.bloomVerb + ' ', '')}
                       </p>
                     </div>
                   </div>
-                  <span className={`shrink-0 text-xs font-semibold px-2.5 py-1 rounded-full ${statusColor}`}>
+                  <span className={`shrink-0 text-sm font-semibold px-2.5 py-1 rounded-full ${statusColor}`}>
                     {status}
                   </span>
                 </div>
@@ -75,7 +75,7 @@ export default function LearningOutcomes() {
 
                 {/* Progress bar */}
                 <div>
-                  <div className="flex justify-between text-xs text-gray-600 mb-1">
+                  <div className="flex justify-between text-sm text-gray-600 mb-1">
                     <span>Progress</span>
                     <span className="font-semibold">{pct}%</span>
                   </div>
@@ -94,7 +94,7 @@ export default function LearningOutcomes() {
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {outcome.relatedModules.map((modId) =>
                   <span key={modId}
-                  className={`text-xs px-2 py-0.5 rounded-full ${completed.includes(modId) ? 'bg-[#D1FAE5] text-[#1B4332] font-semibold' : 'bg-gray-100 text-gray-400'}`}>
+                  className={`text-sm px-2 py-0.5 rounded-full ${completed.includes(modId) ? 'bg-[#D1FAE5] text-[#1B4332] font-semibold' : 'bg-gray-100 text-gray-400'}`}>
                       {completed.includes(modId) ? '✓ ' : ''}{modId.replace(/-/g, ' ')}
                     </span>
                   )}
@@ -106,7 +106,7 @@ export default function LearningOutcomes() {
       </div>
 
       {/* Theory note */}
-      <div className="bg-[#EEF5F0] rounded-2xl p-4 text-xs text-gray-600 border-l-4 border-[#1B4332]">
+      <div className="bg-[#EEF5F0] rounded-2xl p-4 text-sm text-gray-600 border-l-4 border-[#1B4332]">
         <p className="font-bold text-[#1B4332] mb-1">About this screen</p>
         <p>Each outcome is tied to specific modules and quizzes. Complete the relevant modules to achieve each outcome. Progress bars reflect how many related modules you've completed.</p>
         <p className="mt-2 italic">Bloom verbs used: Identify (Remember), Calculate & Predict (Apply), Reflect (Analyse), Recognise (Evaluate)</p>

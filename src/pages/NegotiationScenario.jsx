@@ -112,7 +112,7 @@ export default function NegotiationScenario() {
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center space-y-2 py-4">
           <div className="text-5xl mb-2">{isGood ? '🏆' : '💪'}</div>
           <h2 className="text-xl font-bold text-[#1A1A1A]">{isGood ? 'Excellent negotiator!' : 'Room to grow'}</h2>
-          <p className="text-sm text-gray-600">You navigated {scenario.rounds.length} rounds of a real flatting conflict</p>
+          <p className="text-base text-gray-600">You navigated {scenario.rounds.length} rounds of a real flatting conflict</p>
         </motion.div>
 
         <div className="bg-white rounded-2xl p-5 shadow-sm space-y-3">
@@ -122,7 +122,7 @@ export default function NegotiationScenario() {
         </div>
 
         <div className="bg-[#EEF5F0] rounded-2xl p-4 space-y-2">
-          <p className="text-xs font-semibold text-[#1B4332] uppercase tracking-wide">What worked</p>
+          <p className="text-sm font-semibold text-[#1B4332] uppercase tracking-wide">What worked</p>
           <ul className="space-y-1.5">
             {scenario.whatWorked.map((w, i) => (
               <li key={i} className="flex gap-2 text-sm text-gray-700">
@@ -133,9 +133,9 @@ export default function NegotiationScenario() {
         </div>
 
         <div className="bg-white border-2 border-[#D1FAE5] rounded-2xl p-4 space-y-1">
-          <p className="text-xs font-semibold text-[#1B4332] uppercase tracking-wide">Negotiation principle</p>
-          <p className="font-semibold text-[#1A1A1A] text-sm">{scenario.negotiationPrinciple.name}</p>
-          <p className="text-xs text-gray-600 leading-relaxed">{scenario.negotiationPrinciple.description}</p>
+          <p className="text-sm font-semibold text-[#1B4332] uppercase tracking-wide">Negotiation principle</p>
+          <p className="font-semibold text-[#1A1A1A] text-base">{scenario.negotiationPrinciple.name}</p>
+          <p className="text-sm text-gray-600 leading-relaxed">{scenario.negotiationPrinciple.description}</p>
         </div>
 
         <div className="flex gap-3">
@@ -189,7 +189,7 @@ export default function NegotiationScenario() {
         {scenario.rounds.map((_, i) => (
           <div key={i} className={`flex-1 h-1.5 rounded-full transition-all ${i < round ? 'bg-[#1B4332]' : i === round ? 'bg-[#D1FAE5] border border-[#1B4332]' : 'bg-gray-200'}`} />
         ))}
-        <span className="text-xs text-gray-600 ml-1">Round {round + 1}/{scenario.rounds.length}</span>
+        <span className="text-sm text-gray-600 ml-1">Round {round + 1}/{scenario.rounds.length}</span>
       </div>
 
       {/* Chat interface */}
@@ -206,12 +206,12 @@ export default function NegotiationScenario() {
       {/* Response options */}
       {!showOutcome && (
         <div className="space-y-2">
-          <p className="text-xs text-gray-600 font-medium">Choose your response:</p>
+          <p className="text-sm text-gray-600 font-medium">Choose your response:</p>
           {currentRound.options.map((opt, i) => (
             <button key={i} onClick={() => handleSelect(i)}
               className={`w-full text-left bg-white rounded-xl p-4 shadow-sm border-2 transition-all ${selectedOption === i ? 'border-[#1B4332]' : 'border-transparent hover:border-[#D1FAE5]'}`}>
               <p className="text-sm font-semibold text-[#1A1A1A] mb-1">"{opt.text}"</p>
-              <p className="text-xs text-gray-600 italic">{opt.tone}</p>
+              <p className="text-sm text-gray-600 italic">{opt.tone}</p>
             </button>
           ))}
         </div>

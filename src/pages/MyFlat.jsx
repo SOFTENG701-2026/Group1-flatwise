@@ -126,7 +126,7 @@ function ChallengeCard({ challenge, flatGroup, currentUser, onOptIn, onChallenge
                 <p className="text-xs text-gray-600">{challenge.scenario.unit}</p>
               </>
             ) : (
-              <p className="text-xs text-[#1B4332] font-medium">✓ Your prediction submitted — waiting for flatmates...</p>
+              <p className="text-sm text-[#1B4332] font-medium">✓ Your prediction submitted — waiting for flatmates...</p>
             )}
           </div>
         )}
@@ -151,10 +151,10 @@ function ChallengeCard({ challenge, flatGroup, currentUser, onOptIn, onChallenge
 
         {/* Footer */}
         <div className="flex items-center justify-between pt-1">
-          <span className="text-xs text-gray-600">⏳ {challenge.daysLeft} days left</span>
+          <span className="text-sm text-gray-600">⏳ {challenge.daysLeft} days left</span>
           <div className="flex items-center gap-1.5 bg-[#EEF5F0] rounded-xl px-3 py-1.5">
             <span className="text-sm">{challenge.reward.xpBonus > 0 ? `+${challenge.reward.xpBonus} XP + ` : ''}{FLAT_VISUALISATION_ITEMS[challenge.reward.itemId]?.emoji}</span>
-            <span className="text-xs text-[#1B4332] font-medium">{challenge.reward.itemLabel}</span>
+            <span className="text-sm text-[#1B4332] font-medium">{challenge.reward.itemLabel}</span>
           </div>
         </div>
 
@@ -315,7 +315,7 @@ export default function MyFlat() {
 
         <div className="flex items-center gap-2 bg-[#EEF5F0] rounded-xl px-3 py-2">
           <span className="text-sm">🔒</span>
-          <p className="text-xs text-[#1B4332] font-medium">Only your flatmates can see your progress</p>
+          <p className="text-sm text-[#1B4332] font-medium">Only your flatmates can see your progress</p>
         </div>
 
         {/* Create */}
@@ -454,7 +454,7 @@ export default function MyFlat() {
             );
           })}
         </div>
-        <p className="text-xs text-gray-600 text-center">Everyone learns at their own pace 🙂</p>
+        <p className="text-sm text-gray-600 text-center">Everyone learns at their own pace 🙂</p>
       </div>
 
       {/* Challenge info bottom sheet */}

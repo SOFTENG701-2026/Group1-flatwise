@@ -67,14 +67,14 @@ export default function Dashboard() {
               <div className="rounded-2xl bg-[#1B4332] p-5 cursor-help">
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="text-white/80 text-xs font-medium uppercase tracking-wider">Current level</p>
-                    <p className="text-white text-2xl font-bold mt-0.5">Level {level} — {levelTitle}</p>
-                    <p className="text-white/80 text-sm mt-1">{xp} XP total</p>
+                    <p className="text-white/80 text-sm font-medium uppercase tracking-wider">Current level</p>
+                    <p className="text-white text-3xl font-bold mt-0.5">Level {level} — {levelTitle}</p>
+                    <p className="text-white/80 text-base mt-1">{xp} XP total</p>
                   </div>
                   <Star className="w-8 h-8 text-[#F59E0B]" fill="#F59E0B" />
                 </div>
                 <div className="mt-4">
-                  <div className="flex justify-between text-xs text-white/80 mb-1.5">
+                  <div className="flex justify-between text-sm text-white/80 mb-1.5">
                     <span>Level {level}</span>
                     {nextXP && <span>Level {level + 1} at {nextXP} XP</span>}
                   </div>
@@ -96,18 +96,18 @@ export default function Dashboard() {
       <div className="grid grid-cols-3 gap-3">
         <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
           <Flame className="w-5 h-5 text-[#F59E0B] mx-auto mb-1" />
-          <p className="text-lg font-bold text-[#1A1A1A]">{sessionStreak}</p>
-          <p className="text-xs text-gray-600">Streak</p>
+          <p className="text-xl font-bold text-[#1A1A1A]">{sessionStreak}</p>
+          <p className="text-sm text-gray-600">Streak</p>
         </div>
         <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
           <Star className="w-5 h-5 text-[#F59E0B] mx-auto mb-1" fill="#F59E0B" />
-          <p className="text-lg font-bold text-[#1A1A1A]">{xp}</p>
-          <p className="text-xs text-gray-600">XP</p>
+          <p className="text-xl font-bold text-[#1A1A1A]">{xp}</p>
+          <p className="text-sm text-gray-600">XP</p>
         </div>
         <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
           <BookOpen className="w-5 h-5 text-[#1B4332] mx-auto mb-1" />
-          <p className="text-lg font-bold text-[#1A1A1A]">{completed.length}/{MODULES.length}</p>
-          <p className="text-xs text-gray-600">Modules</p>
+          <p className="text-xl font-bold text-[#1A1A1A]">{completed.length}/{MODULES.length}</p>
+          <p className="text-sm text-gray-600">Modules</p>
         </div>
       </div>
 
@@ -127,8 +127,8 @@ export default function Dashboard() {
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
-          <Link to="/curriculum" className="text-xs text-[#1B4332] font-medium flex items-center gap-1">
-            See all <ChevronRight className="w-3 h-3" />
+          <Link to="/curriculum" className="text-sm text-[#1B4332] font-medium flex items-center gap-1">
+          See all <ChevronRight className="w-4 h-4" />
           </Link>
         </div>
 
@@ -148,11 +148,11 @@ export default function Dashboard() {
                     {allDone ? '✓' : tier.number}
                   </div>
                   <div className="flex-1">
-                    <span className={`text-sm font-semibold ${unlocked ? 'text-[#1A1A1A]' : 'text-gray-500'}`}>{tier.title}</span>
-                    <span className="text-xs text-gray-600 ml-2">{tier.subtitle}</span>
+                    <span className={`text-base font-semibold ${unlocked ? 'text-[#1A1A1A]' : 'text-gray-500'}`}>{tier.title}</span>
+                    <span className="text-sm text-gray-600 ml-2">{tier.subtitle}</span>
                   </div>
-                  {!unlocked && <span className="text-xs bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full flex items-center gap-1"><Lock className="w-3 h-3" />Locked</span>}
-                  {unlocked && !allDone && <span className="text-xs text-gray-500">{tierDone}/{tierModules.length}</span>}
+                  {!unlocked && <span className="text-sm bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full flex items-center gap-1"><Lock className="w-3 h-3" />Locked</span>}
+                  {unlocked && !allDone && <span className="text-sm text-gray-600">{tierDone}/{tierModules.length}</span>}
                 </div>
 
                 {/* Modules in tier */}
@@ -173,15 +173,15 @@ export default function Dashboard() {
                           {mod.icon}
                         </span>
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm font-semibold text-[#1A1A1A] truncate">{mod.title}</p>
-                          <p className="text-xs text-gray-600 truncate">{mod.subtitle}</p>
+                          <p className="text-base font-semibold text-[#1A1A1A] truncate">{mod.title}</p>
+                          <p className="text-sm text-gray-600 truncate">{mod.subtitle}</p>
                         </div>
                         {done ?
-                        <span className="shrink-0 flex items-center gap-1 text-xs font-medium text-[#1B4332] bg-[#D1FAE5] px-2 py-0.5 rounded-full">
-                            <CheckCircle className="w-3 h-3" /> Done
+                        <span className="shrink-0 flex items-center gap-1 text-sm font-medium text-[#1B4332] bg-[#D1FAE5] px-2.5 py-1 rounded-full">
+                            <CheckCircle className="w-3.5 h-3.5" /> Done
                           </span> :
                         isActive ?
-                        <span className="shrink-0 text-xs font-semibold text-white bg-[#1B4332] px-3 py-1 rounded-full">Go</span> :
+                        <span className="shrink-0 text-sm font-semibold text-white bg-[#1B4332] px-3 py-1 rounded-full">Go</span> :
                         unlocked ?
                         <ChevronRight className="w-4 h-4 text-gray-400 shrink-0" /> :
 
@@ -214,10 +214,10 @@ export default function Dashboard() {
                     {badge.emoji}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-bold" style={{ color: badge.textColor }}>{badge.name}</p>
-                    <p className="text-xs text-gray-600 leading-snug mt-0.5">{badge.description}</p>
+                    <p className="text-base font-bold" style={{ color: badge.textColor }}>{badge.name}</p>
+                    <p className="text-sm text-gray-600 leading-snug mt-0.5">{badge.description}</p>
                   </div>
-                  <span className="text-xs font-medium text-gray-600 shrink-0">+{mod.xpReward} XP</span>
+                  <span className="text-sm font-medium text-gray-600 shrink-0">+{mod.xpReward} XP</span>
                 </div>);
           })}
           </div>

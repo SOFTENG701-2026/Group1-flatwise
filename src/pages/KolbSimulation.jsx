@@ -62,7 +62,7 @@ export default function KolbSimulation() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-lg font-bold text-[#1A1A1A]">{scene.title}</h1>
-          <p className="text-xs text-gray-600">{mod.title}</p>
+          <p className="text-sm text-gray-600">{mod.title}</p>
         </div>
         <KolbDiagram activePhase={phase} />
       </div>
@@ -87,15 +87,15 @@ export default function KolbSimulation() {
           <motion.div key="exp" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-4">
             <div className="bg-white rounded-2xl p-4 shadow-sm">
               <div className="flex items-start justify-between mb-2">
-                <p className="text-xs font-bold text-[#1B4332] uppercase tracking-wider">The Scenario</p>
+                <p className="text-sm font-bold text-[#1B4332] uppercase tracking-wider">The Scenario</p>
                 <TheoryPill label="Kolb: predict → reflect" color="#FEF9C3" text="#92400E" />
               </div>
-              <p className="text-sm text-gray-700 leading-relaxed mt-2">{scene.concreteSituation}</p>
+              <p className="text-base text-gray-700 leading-relaxed mt-2">{scene.concreteSituation}</p>
             </div>
             {mod.scaffolding === 'full' && (
               <div className="bg-[#EEF5F0] rounded-2xl p-3 text-xs text-gray-600 flex items-start gap-2">
                 <Info className="w-4 h-4 text-[#1B4332] shrink-0 mt-0.5" />
-                <span><strong>Hint (Tier 1):</strong> Before continuing, think about the numbers mentioned. What's your gut estimate?</span>
+                <span className="text-sm"><strong>Hint (Tier 1):</strong> Before continuing, think about the numbers mentioned. What's your gut estimate?</span>
               </div>
             )}
             <button onClick={() => setPhase('predict')}
@@ -113,10 +113,10 @@ export default function KolbSimulation() {
                 <TooltipTrigger asChild>
                   <div className="bg-white rounded-2xl p-4 shadow-sm cursor-help">
                     <div className="flex items-start justify-between mb-3">
-                      <p className="text-xs font-bold text-[#1B4332] uppercase tracking-wider">Your Prediction</p>
+                      <p className="text-sm font-bold text-[#1B4332] uppercase tracking-wider">Your Prediction</p>
                       <TheoryPill label="Cognitivism: bias surfacing" color="#FCE7F3" text="#9D174D" />
                     </div>
-                    <p className="text-sm text-gray-700 mb-4">{scene.predictionPrompt}</p>
+                    <p className="text-base text-gray-700 mb-4">{scene.predictionPrompt}</p>
                     <div className="flex items-center gap-2">
                       <span className="text-lg font-bold text-[#1B4332]">$</span>
                       <input
@@ -126,7 +126,7 @@ export default function KolbSimulation() {
                         placeholder="0"
                         className="flex-1 h-12 rounded-xl border-2 border-[#D1FAE5] text-center text-xl font-bold text-[#1B4332] outline-none focus:border-[#1B4332] bg-[#EEF5F0]"
                       />
-                      <span className="text-sm text-gray-600">{scene.predictionUnit}</span>
+                      <span className="text-base text-gray-600">{scene.predictionUnit}</span>
                     </div>
                   </div>
                 </TooltipTrigger>
@@ -154,7 +154,7 @@ export default function KolbSimulation() {
               <p className="text-sm font-bold text-[#1A1A1A] mb-1">
                 {deviationPct <= 10 ? '🎯 Spot on!' : deviationPct <= 25 ? '🤏 Close — good thinking!' : '😮 Quite a gap!'}
               </p>
-              <p className="text-xs text-gray-600 mb-4">{scene.actualExplanation}</p>
+              <p className="text-sm text-gray-600 mb-4">{scene.actualExplanation}</p>
               {/* Bar comparison */}
               <div className="space-y-2.5">
                 <div>
@@ -175,7 +175,7 @@ export default function KolbSimulation() {
                     <div className="h-full bg-[#1B4332] rounded-full transition-all duration-700" style={{ width: `${actualPct}%` }} />
                   </div>
                 </div>
-                <p className="text-xs text-gray-600 text-right">Deviation: {deviationPct}%</p>
+                <p className="text-sm text-gray-600 text-right">Deviation: {deviationPct}%</p>
               </div>
             </div>
 
@@ -188,18 +188,18 @@ export default function KolbSimulation() {
                   <div className="flex items-center gap-2">
                     <span className="text-2xl">{biasDetected.icon}</span>
                     <div>
-                      <p className="text-xs font-bold uppercase tracking-wider" style={{ color: biasDetected.textColor }}>Cognitive Bias Detected</p>
+                      <p className="text-sm font-bold uppercase tracking-wider" style={{ color: biasDetected.textColor }}>Cognitive Bias Detected</p>
                       <p className="text-sm font-bold text-[#1A1A1A]">{biasDetected.name}</p>
                     </div>
                   </div>
                   <TheoryPill label="Cognitivism: bias surfacing" color="#FCE7F3" text="#9D174D" />
                 </div>
                 <p className="text-sm text-gray-700 mb-3">{biasDetected.description}</p>
-                <p className="text-xs text-gray-600 italic mb-3">💡 {biasDetected.tip}</p>
+                <p className="text-sm text-gray-600 italic mb-3">💡 {biasDetected.tip}</p>
                 {!biasWatching ? (
                   <button
                     onClick={() => setBiasWatching(true)}
-                    className="w-full h-10 rounded-xl font-semibold text-xs text-white"
+                    className="w-full h-10 rounded-xl font-semibold text-sm text-white"
                     style={{ backgroundColor: biasDetected.textColor }}>
                     I'll watch for this →
                   </button>
@@ -213,7 +213,7 @@ export default function KolbSimulation() {
 
             {/* Concept card */}
             <div className="bg-[#1B4332] rounded-2xl p-4 shadow-sm">
-              <p className="text-xs font-bold text-white/80 uppercase tracking-wider mb-1">
+              <p className="text-sm font-bold text-white/80 uppercase tracking-wider mb-1">
                 💡 Concept — {scene.conceptCard.principle}
               </p>
               <p className="text-white text-sm font-semibold mb-2">{scene.conceptCard.title}</p>
@@ -232,7 +232,7 @@ export default function KolbSimulation() {
           <motion.div key="apply" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-4">
             <div className="bg-white rounded-2xl p-4 shadow-sm">
               <div className="flex items-start justify-between mb-3">
-                <p className="text-xs font-bold text-[#1B4332] uppercase tracking-wider">Apply It</p>
+                <p className="text-sm font-bold text-[#1B4332] uppercase tracking-wider">Apply It</p>
                 <TheoryPill label="Bloom: Apply" color="#FEF9C3" text="#92400E" />
               </div>
               <p className="text-sm font-medium text-[#1A1A1A] mb-4">{scene.applyQuestion.prompt}</p>
@@ -250,7 +250,7 @@ export default function KolbSimulation() {
                       }`}>
                       <span>{opt.text}</span>
                       {showResult && (
-                        <p className={`text-xs mt-1.5 font-medium ${opt.correct ? 'text-[#1B4332]' : 'text-red-600'}`}>
+                        <p className={`text-sm mt-1.5 font-medium ${opt.correct ? 'text-[#1B4332]' : 'text-red-600'}`}>
                           {opt.correct ? '✓' : '✗'} {opt.explanation}
                         </p>
                       )}

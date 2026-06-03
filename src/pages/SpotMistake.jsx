@@ -94,7 +94,7 @@ export default function SpotMistake() {
         </motion.div>
 
         <div className="bg-[#EEF5F0] rounded-2xl p-4 space-y-2">
-          <p className="text-xs font-semibold text-[#1B4332] uppercase tracking-wide">What these mistakes teach you</p>
+          <p className="text-sm font-semibold text-[#1B4332] uppercase tracking-wide">What these mistakes teach you</p>
           <ul className="space-y-1.5">
             {budget.summary.map((s, i) => (
               <li key={i} className="flex gap-2 text-sm text-gray-700">
@@ -105,9 +105,9 @@ export default function SpotMistake() {
         </div>
 
         <div className="bg-white border-2 border-[#D1FAE5] rounded-2xl p-4 space-y-1">
-          <p className="text-xs font-semibold text-[#1B4332] uppercase tracking-wide">Cognitive bias</p>
-          <p className="font-semibold text-[#1A1A1A] text-sm">{budget.biasCard.name}</p>
-          <p className="text-xs text-gray-600 leading-relaxed">{budget.biasCard.description}</p>
+          <p className="text-sm font-semibold text-[#1B4332] uppercase tracking-wide">Cognitive bias</p>
+          <p className="font-semibold text-[#1A1A1A] text-base">{budget.biasCard.name}</p>
+          <p className="text-sm text-gray-600 leading-relaxed">{budget.biasCard.description}</p>
         </div>
 
         <div className="flex gap-3">
@@ -145,11 +145,11 @@ export default function SpotMistake() {
         <div className="w-10 h-10 bg-[#FEF9C3] rounded-xl flex items-center justify-center text-xl shrink-0">🔍</div>
         <div className="flex-1">
           <p className="text-sm font-semibold text-[#1A1A1A]">Find the 3 mistakes</p>
-          <p className="text-xs text-gray-600">Tap any line item you think contains an error</p>
+          <p className="text-sm text-gray-600">Tap any line item you think contains an error</p>
         </div>
         <div className="text-right">
           <p className="text-2xl font-bold text-[#1B4332]">{foundMistakes.length}/3</p>
-          <p className="text-xs text-gray-600">found</p>
+          <p className="text-sm text-gray-600">found</p>
         </div>
       </div>
 
@@ -205,7 +205,7 @@ export default function SpotMistake() {
 
         {wrongTaps > 0 && (
           <div className="px-4 pb-3">
-            <p className="text-xs text-gray-600">Wrong taps: {wrongTaps} (−{wrongTaps * 10} points)</p>
+            <p className="text-sm text-gray-600">Wrong taps: {wrongTaps} (−{wrongTaps * 10} points)</p>
           </div>
         )}
       </div>
@@ -226,12 +226,12 @@ export default function SpotMistake() {
             </div>
             <div className="flex justify-between items-center bg-gray-50 rounded-xl px-4 py-2 mb-3">
               <div className="text-center">
-                <p className="text-xs text-gray-600">Budgeted</p>
+                <p className="text-sm text-gray-600">Budgeted</p>
                 <p className="font-bold text-red-500 line-through">{openSheet.value}</p>
               </div>
               <ArrowRight className="w-4 h-4 text-gray-400" />
               <div className="text-center">
-                <p className="text-xs text-gray-600">Should be</p>
+                <p className="text-sm text-gray-600">Should be</p>
                 <p className="font-bold text-[#1B4332]">{openSheet.correctValue}</p>
               </div>
             </div>

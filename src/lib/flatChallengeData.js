@@ -38,7 +38,7 @@ export const WEEKLY_CHALLENGES = [
     scenario: {
       title: "How much does the average NZ student spend on groceries per month?",
       unit: "Enter your estimate in dollars",
-      actualLabel: "$160–$200/month (Stats NZ 2023)"
+      actualLabel: "$200–$280/month (Stats NZ 2024)"
     },
     reward: {
       xpBonus: 30,
@@ -73,7 +73,7 @@ export const WEEKLY_CHALLENGES = [
     scenario: {
       title: "Monthly power bill for 4 people in Wellington, July",
       unit: "Enter your estimate in dollars",
-      actualLabel: "$180–$260/month (Powerswitch NZ avg)"
+      actualLabel: "$220–$320/month (Powerswitch NZ avg)"
     },
     reward: {
       xpBonus: 25,

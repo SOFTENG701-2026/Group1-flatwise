@@ -6,9 +6,9 @@ export const NEGOTIATION_SCENARIOS = [
     bannerEmoji: "📶",
     flatmateName: "Jordan",
     flatmateAvatar: { initials: "JO", color: "#8B5CF6" },
-    openingMessage: "Hey, can we upgrade the internet? I'm getting terrible speeds for my work calls. The $100 plan is way better — we'd split it 50/50 obviously.",
+    openingMessage: "Hey, can we upgrade the internet? I'm getting terrible speeds for my work calls. The $120 plan is way better — we'd split it 50/50 obviously.",
     chips: [
-      { value: "$60→$100", label: "Monthly cost" },
+      { value: "$75→$120", label: "Monthly cost" },
       { value: "2 people", label: "Flatmates" },
       { value: "WFH", label: "Jordan's need" },
     ],

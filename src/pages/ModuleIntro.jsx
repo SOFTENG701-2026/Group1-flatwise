@@ -18,7 +18,7 @@ export default function ModuleIntro() {
           <span className="text-3xl">{mod.icon}</span>
           <div>
             <h1 className="text-xl font-bold text-white">{mod.title}</h1>
-            <p className="text-xs text-white/80 mt-0.5">{mod.subtitle}</p>
+            <p className="text-sm text-white/80 mt-0.5">{mod.subtitle}</p>
           </div>
         </div>
         {/* Theory pills */}
@@ -31,12 +31,12 @@ export default function ModuleIntro() {
 
       {/* Description */}
       <div className="bg-white rounded-2xl p-4 shadow-sm">
-        <p className="text-sm text-gray-700 leading-relaxed">{mod.description}</p>
+        <p className="text-base text-gray-700 leading-relaxed">{mod.description}</p>
       </div>
 
       {/* What you'll do */}
       <div className="bg-white rounded-2xl p-4 shadow-sm">
-        <p className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-3">What you'll do</p>
+        <p className="text-sm font-bold text-gray-600 uppercase tracking-wider mb-3">What you'll do</p>
         <ul className="space-y-2">
           {mod.outcomes.map((o, i) => (
             <li key={i} className="flex items-start gap-2 text-sm text-[#1A1A1A]">
@@ -53,8 +53,8 @@ export default function ModuleIntro() {
           <div className="flex items-start gap-2">
             <Lightbulb className="w-4 h-4 text-[#1B4332] shrink-0 mt-0.5" />
             <div>
-              <p className="text-xs font-bold text-[#1B4332] mb-1">Vygotsky's ZPD in action</p>
-              <p className="text-xs text-gray-600 italic">{mod.zpdNote}</p>
+              <p className="text-sm font-bold text-[#1B4332] mb-1">Vygotsky's ZPD in action</p>
+              <p className="text-sm text-gray-600 italic">{mod.zpdNote}</p>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@ export default function ModuleIntro() {
           mod.scaffolding === 'full' ? 'bg-green-400' :
           mod.scaffolding === 'request' ? 'bg-yellow-400' : 'bg-gray-300'
         }`} />
-        <span className="text-xs text-gray-600">
+        <span className="text-sm text-gray-600">
           {mod.scaffolding === 'full' ? 'Scaffolding: ON — hints visible throughout' :
            mod.scaffolding === 'request' ? 'Scaffolding: Hint available on request' :
            'Scaffolding: OFF — no hints (Tier 3)'}

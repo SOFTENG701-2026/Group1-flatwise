@@ -14,8 +14,8 @@ export default function GlobalProgressBar() {
         <TooltipTrigger asChild>
           <div className="w-full cursor-help">
             <div className="flex justify-between items-center mb-1">
-              <span className="text-xs font-medium text-[#1B4332]">Overall progress</span>
-              <span className="text-xs font-semibold text-[#1B4332]">{pct}%</span>
+              <span className="text-sm font-medium text-[#1B4332]">Overall progress</span>
+              <span className="text-sm font-semibold text-[#1B4332]">{pct}%</span>
             </div>
             <div className="w-full h-2 bg-[#D1FAE5] rounded-full overflow-hidden">
               <div

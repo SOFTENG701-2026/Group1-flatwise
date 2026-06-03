@@ -74,7 +74,7 @@ export default function ModuleQuiz() {
         {/* Completion header */}
         <div className="bg-[#1B4332] rounded-2xl p-5 text-center">
           <div className="w-14 h-14 rounded-full bg-[#D1FAE5] flex items-center justify-center text-2xl mx-auto mb-3">🏆</div>
-          <p className="text-white/80 text-xs font-semibold uppercase tracking-wider">Module complete!</p>
+          <p className="text-white/80 text-sm font-semibold uppercase tracking-wider">Module complete!</p>
           <p className="text-white text-xl font-bold mt-1">{mod.title}</p>
           <button className="mt-3 px-4 py-1.5 rounded-full bg-[#D1FAE5] text-[#1B4332] text-sm font-bold">
             +{mod.xpReward + score * 15} XP earned
@@ -85,21 +85,21 @@ export default function ModuleQuiz() {
         <div className="grid grid-cols-3 gap-3">
           <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
             <p className="text-xl font-bold text-[#1A1A1A]">{totalQ}</p>
-            <p className="text-xs text-gray-600">Activities</p>
+            <p className="text-sm text-gray-600">Activities</p>
           </div>
           <div className="bg-[#D1FAE5] rounded-2xl p-3 text-center">
             <p className="text-xl font-bold text-[#1B4332]">{mod.xpReward + score * 15}</p>
-            <p className="text-xs text-[#1B4332]">XP Earned</p>
+            <p className="text-sm text-[#1B4332]">XP Earned</p>
           </div>
           <div className="bg-white rounded-2xl p-3 text-center shadow-sm">
             <p className="text-xl font-bold text-[#1A1A1A]">{pct}%</p>
-            <p className="text-xs text-gray-600">Quiz Score</p>
+            <p className="text-sm text-gray-600">Quiz Score</p>
           </div>
         </div>
 
         {/* What you learned */}
         <div className="bg-white rounded-2xl p-4 shadow-sm">
-          <p className="text-xs font-bold text-gray-600 uppercase tracking-wider mb-3">What you learned</p>
+          <p className="text-sm font-bold text-gray-600 uppercase tracking-wider mb-3">What you learned</p>
           <ul className="space-y-2">
             {mod.outcomes.map((o, i) =>
             <li key={i} className="flex items-start gap-2 text-sm text-[#1A1A1A]">
@@ -120,8 +120,8 @@ export default function ModuleQuiz() {
         <div className="bg-white rounded-2xl p-4 shadow-sm flex items-center gap-3">
             <span className="text-2xl">{next.icon}</span>
             <div>
-              <p className="text-xs text-gray-600">Unlocked</p>
-              <p className="text-sm font-bold text-[#1B4332]">Module {next.order} — {next.title}</p>
+              <p className="text-sm text-gray-600">Unlocked</p>
+              <p className="text-base font-bold text-[#1B4332]">Module {next.order} — {next.title}</p>
             </div>
           </div>
         }
@@ -147,8 +147,8 @@ export default function ModuleQuiz() {
           <TooltipTrigger asChild>
             <div className="cursor-help">
               <div className="flex items-center justify-between mb-1">
-                <p className="text-xs font-bold text-gray-600 uppercase tracking-wider">Knowledge Check</p>
-                <span className="text-xs text-gray-600">{current + 1}/{totalQ}</span>
+                <p className="text-sm font-bold text-gray-600 uppercase tracking-wider">Knowledge Check</p>
+                <span className="text-sm text-gray-600">{current + 1}/{totalQ}</span>
               </div>
               <div className="flex gap-1.5">
                 {questions.map((_, i) =>
@@ -156,7 +156,7 @@ export default function ModuleQuiz() {
                 )}
               </div>
               <div className="mt-2 flex items-center justify-between">
-                <span className="text-xs text-gray-600">Score: {score}/{current * 2 + (isCorrect ? 2 : attempts > 0 ? 1 : 0)}</span>
+                <span className="text-sm text-gray-600">Score: {score}/{current * 2 + (isCorrect ? 2 : attempts > 0 ? 1 : 0)}</span>
                 <TheoryPill label="Bloom: Apply" color={bloomMeta.bg} text={bloomMeta.text} />
               </div>
             </div>

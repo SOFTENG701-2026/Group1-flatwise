@@ -15,7 +15,7 @@ const THEORY_TOOLTIPS = {
   "Constructivist scaffolding": "Vygotsky's ZPD — hints and support are gradually removed as learner competence increases (fading scaffolding).",
   "Social constructivism": "Social Constructivism (Vygotsky) — learning is deepened through realistic social and collaborative scenarios.",
   "Cognitivism: bias surfacing": "Cognitivism — surfacing and naming cognitive biases helps learners correct systematic errors in thinking.",
-  "Cognitivism: Error detection": "Cognitivism — Error detection tasks train learners to notice systematic mistakes, improving metacognitive accuracy.",
+  "Cognitivism: Error detection": "Cognitivism — Error detection tasks train learners to notice systematic mistakes, improving metacognitive accuracy."
 };
 
 export default function TheoryPill({ label, color = "#D1FAE5", text = "#1B4332", tooltip }) {
@@ -24,17 +24,17 @@ export default function TheoryPill({ label, color = "#D1FAE5", text = "#1B4332",
     <TooltipProvider delayDuration={200}>
       <Tooltip>
         <TooltipTrigger asChild>
-          <span
-            className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold cursor-help"
-            style={{ backgroundColor: color, color: text }}
-          >
-            {label}
-          </span>
+          
+
+
+
+
+          
         </TooltipTrigger>
         <TooltipContent side="bottom" className="max-w-xs text-xs">
           {tip}
         </TooltipContent>
       </Tooltip>
-    </TooltipProvider>
-  );
+    </TooltipProvider>);
+
 }
