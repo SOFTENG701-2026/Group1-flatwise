@@ -23,8 +23,9 @@ export default function LearningOutcomes() {
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <p className="text-sm text-gray-600 mt-1 cursor-help underline decoration-dotted">
+              <p className="text-sm text-gray-600 mt-1 cursor-help flex items-center gap-1">
                 Aligned to Bloom's Revised Taxonomy (Anderson & Krathwohl, 2001)
+                <span className="inline-flex items-center justify-center w-4 h-4 rounded-full border border-gray-400 text-gray-400 text-[10px] font-bold leading-none shrink-0">?</span>
               </p>
             </TooltipTrigger>
             <TooltipContent className="text-xs max-w-xs">
