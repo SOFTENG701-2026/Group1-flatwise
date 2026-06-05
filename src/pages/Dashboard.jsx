@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Flame, Star, BookOpen, Lock, CheckCircle, ChevronRight, ArrowRight, Trophy } from 'lucide-react';
+import { Flame, Star, BookOpen, Lock, CheckCircle, ChevronRight, ArrowRight, Trophy, HelpCircle } from 'lucide-react';
 import { useUserProgress } from '@/lib/useUserProgress';
 import {
   MODULES, TIERS, getLevelFromXP, getLevelProgress, getXPForNextLevel,
@@ -117,9 +117,7 @@ export default function Dashboard() {
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <h2 className="text-base font-bold text-[#1A1A1A] cursor-help underline decoration-dotted">Curriculum
-
-                </h2>
+                <h2 className="text-base font-bold text-[#1A1A1A] cursor-help flex items-center gap-1">Curriculum <HelpCircle className="w-3.5 h-3.5 text-gray-400" /></h2>
               </TooltipTrigger>
               <TooltipContent className="text-xs max-w-xs">
                 <p className="font-semibold">Vygotsky's Zone of Proximal Development</p>
